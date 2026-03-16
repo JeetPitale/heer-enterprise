@@ -30,6 +30,6 @@ export const analyzeSkin = async (req, res) => {
       return res.status(error.response.status).json(error.response.data);
     }
     console.error("NODE → PYTHON ERROR:", error.message);
-    res.status(500).json({ message: "Skin analysis failed" });
+    res.status(500).json({ message: "Skin analysis failed. " + error.message });
   }
 };
